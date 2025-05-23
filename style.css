@@ -209,7 +209,7 @@ p.name { /* Specific style for the name in contact section */
     margin-bottom: 0;
 }
 
-.job-entry h3, .edu-entry h3, .project-entry h3 {
+.job-entry h3, .project-entry h3 {
     font-family: 'Lato', sans-serif; /* Consistent sans-serif for sub-headings */
     font-size: 1.6em; /* Larger job titles */
     color: #393E46; /* Secondary Dark */
