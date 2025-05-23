@@ -1,0 +1,420 @@
+/* Professional Color Palette:
+   - Primary Dark (Main Text, Major Headers): #222831 (Very Dark Grey)
+   - Secondary Dark (Sub-headers, Strong Text): #393E46 (Dark Grey)
+   - Primary Light (Background): #F0F2F5 (Off-White/Very Light Blue-Grey)
+   - Accent Color (Highlights, Links, Borders): #00ADB5 (Bright Teal / Aqua) - Elegant, modern
+   - Subtle Accent (Light Text on Dark Background): #EEEEEE (Light Grey)
+   - Tertiary Accent (Hover/Secondary elements): #55B4B0 (Softer Teal)
+*/
+
+/* Basic Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Clean sans-serif for body */
+    line-height: 1.6;
+    color: #222831; /* Primary Dark text color */
+    background-color: #F0F2F5; /* Primary Light background */
+    display: flex;
+    justify-content: center;
+    padding: 30px; /* Generous padding around the entire CV */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+    -moz-osx-font-smoothing: grayscale; /* Smoother font rendering */
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1150px; /* Wider for more comfortable reading */
+    background-color: #fff;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1); /* Deeper, more diffused shadow */
+    border-radius: 15px; /* More pronounced rounded corners */
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 380px; /* Wider sidebar */
+    background-color: #393E46; /* Secondary Dark for sidebar background */
+    color: #fff;
+    padding: 45px 35px; /* More generous padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15); /* More prominent shadow for separation */
+    position: relative; /* For the subtle diagonal line */
+}
+
+/* Subtle diagonal line effect (optional, adds unique touch) */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,173,181,0.05) 0%, rgba(0,173,181,0) 30%); /* Subtle accent gradient */
+    pointer-events: none;
+}
+
+
+.profile-photo {
+    width: 170px; /* Size of the circular photo */
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 40px; /* More space below photo */
+    border: 5px solid #00ADB5; /* Accent color border, slightly thicker */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Deeper shadow for image */
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Black and white as in PDF */
+    opacity: 0.95; /* Closer to full opacity */
+}
+
+.sidebar-section {
+    width: 100%;
+    margin-bottom: 35px; /* More spacing between sections */
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Very subtle separator */
+}
+
+.sidebar-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.sidebar h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif for sidebar headings */
+    font-size: 1.4em;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* More space below heading */
+    color: #00ADB5; /* Accent color for sidebar headings */
+    text-align: center;
+    letter-spacing: 1.8px; /* Slightly more open letter spacing */
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 700; /* Bolder */
+}
+
+.sidebar h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px; /* Wider underline */
+    height: 2px;
+    background-color: #00ADB5; /* Accent color underline */
+}
+
+.sidebar p {
+    font-size: 0.98em;
+    margin-bottom: 8px; /* More space for lines of text */
+    text-align: center;
+    line-height: 1.5;
+    color: #EEEEEE; /* Subtle Accent for general info */
+}
+
+p.name { /* Specific style for the name in contact section */
+    font-size: 1.35em; /* Larger name */
+    font-weight: 700;
+    margin-bottom: 15px; /* More space below name */
+    color: #fff; /* White for strongest contrast */
+    letter-spacing: 0.5px;
+}
+
+.sidebar strong {
+    color: #A7D9D3; /* Light Teal for strong text in sidebar */
+    font-weight: 600;
+}
+
+.sidebar a {
+    color: #A7D9D3; /* Light Teal for links */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+    color: #fff; /* White on hover */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.98em;
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+
+/* Content Area Styling */
+.content {
+    flex-grow: 1;
+    padding: 50px 60px; /* More generous padding */
+    background-color: #fff;
+}
+
+.section {
+    margin-bottom: 50px; /* More spacing between sections */
+    padding-bottom: 35px;
+    border-bottom: 1px solid #EFEFEF; /* Secondary Light for subtle separator */
+}
+
+.section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.content h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif for content headings */
+    font-size: 2.3em;
+    color: #222831; /* Primary Dark for content headings */
+    margin-bottom: 30px; /* More space below heading */
+    text-transform: uppercase;
+    border-bottom: 3px solid #00ADB5; /* Accent color for stronger underline */
+    padding-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.professional-summary p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 0;
+    color: #393E46; /* Secondary Dark for body text */
+}
+
+.job-entry, .edu-entry, .project-entry {
+    margin-bottom: 35px; /* More space between entries */
+}
+
+.job-entry:last-child, .edu-entry:last-child, .project-entry:last-child {
+    margin-bottom: 0;
+}
+
+.job-entry h3, .edu-entry h3, .project-entry h3 {
+    font-family: 'Lato', sans-serif; /* Consistent sans-serif for sub-headings */
+    font-size: 1.6em; /* Larger job titles */
+    color: #393E46; /* Secondary Dark */
+    margin-bottom: 10px;
+    font-weight: 700; /* Bolder */
+}
+
+.company-info, .school-info, .project-info {
+    font-style: italic;
+    color: #607d8b; /* Blue-Gray for info text */
+    margin-bottom: 15px;
+    font-size: 1em;
+    letter-spacing: 0.2px;
+}
+
+.job-entry ul {
+    list-style-type: disc;
+    margin-left: 35px; /* More indent */
+    font-size: 1.05em;
+    color: #555;
+}
+
+.job-entry li {
+    margin-bottom: 10px; /* More space between list items */
+    line-height: 1.5;
+}
+
+/* Skills Section */
+.skills-category {
+    margin-bottom: 20px;
+}
+
+.skills-category p {
+    margin-bottom: 8px;
+    line-height: 1.7;
+    font-size: 1.02em;
+    color: #393E46;
+}
+
+.skills-category strong {
+    color: #222831;
+    font-weight: 700;
+}
+
+/* Courses Section */
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 20px; /* Larger gap for a cleaner look */
+}
+
+.course-list p {
+    background-color: #E6F6F6; /* Very light teal for tags */
+    color: #00ADB5; /* Dark teal text on light tag */
+    padding: 10px 20px;
+    border-radius: 30px; /* More rounded, pill-like shape */
+    font-size: 0.95em;
+    white-space: nowrap;
+    border: 1px solid #B2DFDB; /* Lighter border */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: default; /* Indicate not directly clickable unless it's a real link */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for tags */
+}
+
+.course-list p:hover {
+    background-color: #D4F4F4; /* Slightly darker on hover */
+    transform: translateY(-3px); /* More noticeable lift effect */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Graduation Project */
+.graduation-project h3 {
+    font-size: 1.45em;
+    color: #393E46;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.graduation-project p {
+    font-size: 1.02em;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 35px 30px;
+        border-radius: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+    }
+
+    .sidebar h2 {
+        font-size: 1.3em;
+    }
+
+    .sidebar p, .sidebar ul li {
+        font-size: 0.9em;
+    }
+
+    .content {
+        padding: 40px 35px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .job-entry h3, .edu-entry h3, .project-entry h3 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 30px 25px;
+    }
+
+    .content h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+    }
+
+    .professional-summary p {
+        font-size: 1em;
+    }
+
+    .job-entry h3, .edu-entry h3, .project-entry h3 {
+        font-size: 1.3em;
+    }
+
+    .company-info, .school-info, .project-info {
+        font-size: 0.95em;
+    }
+
+    .job-entry ul {
+        margin-left: 25px;
+        font-size: 1em;
+    }
+
+    .course-list {
+        flex-direction: row; /* Keep row direction */
+        gap: 10px 15px;
+        justify-content: center; /* Center items on smaller screens if they fit */
+    }
+    .course-list p {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 25px 15px;
+    }
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    .sidebar h2 {
+        font-size: 1.1em;
+        letter-spacing: 1.2px;
+    }
+    .sidebar p, .sidebar ul li {
+        font-size: 0.85em;
+    }
+    p.name {
+        font-size: 1.1em;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+    .content h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    .job-entry h3, .edu-entry h3, .project-entry h3 {
+        font-size: 1.1em;
+    }
+    .job-entry ul {
+        margin-left: 20px;
+        font-size: 0.9em;
+    }
+    .course-list {
+        flex-direction: column; /* Stack vertically on very small screens */
+        align-items: center; /* Center stacked items */
+    }
+}
